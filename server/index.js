@@ -13,6 +13,15 @@ app.get('/test', (req, res) => {
 });
 app.use('/api/user',userRoutes);
 app.use('/api/auth',authRoutes);
+app.use((err,req,res,next)=>{
+    const statusCode = err.statusCode || 500;
+    const message = err.message || "Internal Server Error";
+    res.status(statusCode).json({
+        success:false,
+        statusCode,
+        message
+    })
+})
 
 app.listen(process.env.PORT || 8080, async () => {
   try {
