@@ -20,7 +20,7 @@ const Header = () => {
       <form>
         <TextInput
           type="text"
-          placeholder="serach"
+          placeholder="Serach..."
           rightIcon={AiOutlineSearch}
           className="hidden lg:inline"
         />
