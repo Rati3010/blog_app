@@ -1,5 +1,6 @@
 import mongoose from 'mongoose';
 
+
 const userSchema = new mongoose.Schema(
   {
     username: {
@@ -16,6 +17,10 @@ const userSchema = new mongoose.Schema(
       type: String,
       required: true,
     },
+    profilePicture:{
+      type: String,
+      default:'https://wallpapers.com/images/high/cool-profile-picture-minion-13pu7815v42uvrsg.webp'
+    }
   },
   { timestamps: true }
 );
