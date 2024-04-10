@@ -3,10 +3,12 @@ import dotenv from 'dotenv';
 import connection from './config/db.js';
 import userRoutes from './routes/user.route.js';
 import authRoutes from './routes/auth.route.js';
+import cookieParser from 'cookie-parser';
 
 dotenv.config();
 const app = express();
 app.use(express.json());
+app.use(cookieParser());
 
 app.get('/test', (req, res) => {
   res.json({ message: 'Api is working' });
